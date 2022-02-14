@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 11:51:44 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/14 11:53:48 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/14 12:27:35 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/14 13:50:57 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,23 @@ void	ft_print(char c)
 	write(1, &c, 1);
 }
 
-void	ft_print_numbers(void)
+void	ft_putnbr(int nb)
 {
-	char	n;
-
-	n = '0';
-	while (n <= '9')
+	if (nb == -2147483648)
 	{
-		ft_print(n);
-		n++;
+		write(1, "-2147483648", 11);
+		return ;
 	}
+	if (nb < 0)
+	{
+		write(1, "-", 2);
+		nb = nb * (-1);
+	}
+	if (nb > 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+		ft_print(nb + '0');
 }

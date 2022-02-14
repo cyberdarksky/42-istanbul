@@ -5,21 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/11 12:17:48 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/11 12:41:50 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/14 11:54:15 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/14 11:56:49 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_is_negative(int a)
+void	ft_print(char c)
 {
-	if (a < 0)
-	{
-		write(1, 'N', 1);
-	}
+	write(1, &c, 1);
+}
+
+void	ft_is_negative(int n)
+{
+	if (n < 0)
+		ft_print('N');
 	else
-	{
-		write(1, 'P', 1);
-	}
+		ft_print('P');
 }

@@ -5,21 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/10 16:30:14 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/11 12:38:32 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/14 11:44:56 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/14 11:48:16 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+void	ft_print(char c)
+{
+	write(1, &c, 1);
+}
+
 void	ft_print_alphabet(void)
 {
-	char	letter;
+	char	c;
 
-	letter = 'a';
-	while (letter <= 'z')
+	c = 'a';
+	while (c <= 'z')
 	{
-		write(1, letter, 1);
-		letter++;
+		ft_print(c);
+		c++;
 	}
 }

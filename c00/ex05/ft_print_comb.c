@@ -5,36 +5,43 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/11 12:25:45 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/11 13:03:31 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/14 11:57:32 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/14 12:14:22 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+void	ft_print(char x, char y, char z)
+{
+	write(1, &x, 1);
+	write(1, &y, 1);
+	write(1, &z, 1);
+}
+
 void	ft_print_comb(void)
 {
-	char	first;
-	char	second;
-	char	third;
+	char	f;
+	char	s;
+	char	t;
 
-	first = '0';
-	while (first <= '9')
+	f = '0';
+	while (f < '8')
 	{
-		second = first + 1;
-		while (second <= '9')
+		s = f + 1;
+		while (s < '9')
 		{
-			third = second + 1;
-			while (third <= '9')
+			t = s + 1;
+			while (t <= '9')
 			{
-				write(1, &first, 1);
-				write(1, &second, 1);
-				write(1, &third, 1);
+				ft_print(f, s, t);
+				if (f == '7' && s == '8' && t == '9')
+					break ;
 				write(1, ", ", 2);
-				third++;
+				t++;
 			}
-			second++;
+			s++;
 		}
-		first++;
+		f++;
 	}
 }

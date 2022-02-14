@@ -1,30 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 11:51:44 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/14 11:53:48 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/14 17:58:58 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/14 18:00:36 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print(char c)
+void	ft_ultimate_ft(int *********nbr)
 {
-	write(1, &c, 1);
-}
-
-void	ft_print_numbers(void)
-{
-	char	n;
-
-	n = '0';
-	while (n <= '9')
-	{
-		ft_print(n);
-		n++;
-	}
+	*********nbr = 42;
 }

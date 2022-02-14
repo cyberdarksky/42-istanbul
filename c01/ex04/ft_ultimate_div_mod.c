@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 11:51:44 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/14 11:53:48 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/14 18:07:16 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/14 18:09:57 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print(char c)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	write(1, &c, 1);
-}
+	int		div;
+	int		mod;
 
-void	ft_print_numbers(void)
-{
-	char	n;
-
-	n = '0';
-	while (n <= '9')
-	{
-		ft_print(n);
-		n++;
-	}
+	div = *a / *b;
+	mod = *a % *b;
+	*a = div;
+	*b = mod;
 }

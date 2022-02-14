@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 11:51:44 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/14 11:53:48 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/14 18:38:34 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/14 19:41:05 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_print(char c)
+void	ft_rev_int_tab(int *tab, int size)
 {
-	write(1, &c, 1);
+	int	arr[];
+	int	index;
+
+	index = 0;
+	while (index < size)
+	{
+		arr[size - index - 1] = tab[index];
+		index++;
+	}
+	index = 0;
+	while (index < size)
+	{
+		tab[index] = arr[index];
+		index++;
+	}
 }
 
-void	ft_print_numbers(void)
+int main()
 {
-	char	n;
+	int a[] = {1, 2, 3, 4, 5};
+	ft_rev_int_tab(a, 5);
 
-	n = '0';
-	while (n <= '9')
+	for(int i = 0;i < 5; i++)
 	{
-		ft_print(n);
-		n++;
+		printf("%i", a[i]);
 	}
 }
