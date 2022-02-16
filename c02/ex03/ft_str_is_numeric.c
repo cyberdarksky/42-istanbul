@@ -1,16 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 17:58:58 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/14 18:00:36 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/16 15:31:41 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/16 15:39:11 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_ft(int *********nbr)
+int	ft_str_is_numeric(char *str)
 {
-	*********nbr = 42;
+	int	index;
+
+	index = 0;
+	while (str[index] != '\0')
+	{
+		if ((str[index] < '0') || (str[index] > '9'))
+			return (0);
+		index++;
+	}
+	return (1);
 }

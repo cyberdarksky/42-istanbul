@@ -1,43 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 18:38:34 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/14 19:41:05 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/16 16:45:37 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/16 16:53:02 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void	ft_rev_int_tab(int *tab, int size)
+int	ft_str_is_uppercase(char *str)
 {
-	int	arr[];
 	int	index;
 
 	index = 0;
-	while (index < size)
+	while (str[index] != '\0')
 	{
-		arr[size - index - 1] = tab[index];
+		if (!((str[index] >= 'A') && (str[index] <= 'Z')))
+			return (0);
 		index++;
 	}
-	index = 0;
-	while (index < size)
-	{
-		tab[index] = arr[index];
-		index++;
-	}
-}
-
-int main()
-{
-	int a[] = {1, 2, 3, 4, 5};
-	ft_rev_int_tab(a, 5);
-
-	for(int i = 0;i < 5; i++)
-	{
-		printf("%i", a[i]);
-	}
+	return (1);
 }

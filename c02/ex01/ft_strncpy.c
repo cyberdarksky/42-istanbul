@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 18:07:16 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/14 18:09:57 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/16 13:05:17 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/16 14:08:42 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int		div;
-	int		mod;
+	unsigned int	index;
 
-	div = *a / *b;
-	mod = *a % *b;
-	*a = div;
-	*b = mod;
+	index = 0;
+	while ((src[index] != '\0') || (index < n))
+	{
+		if (index >= n)
+			dest[index] = '\0';
+		dest[index] = src[index];
+		index++;
+	}
+	dest[index + 1] = '\0';
+	return (dest);
 }

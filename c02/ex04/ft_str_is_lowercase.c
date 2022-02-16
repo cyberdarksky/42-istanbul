@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 11:44:56 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/14 11:48:16 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/16 15:39:33 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/16 16:44:14 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print(char c)
+int	ft_str_is_lowercase(char *str)
 {
-	write(1, &c, 1);
-}
+	int	index;
 
-void	ft_print_alphabet(void)
-{
-	char	c;
-
-	c = 'a';
-	while (c <= 'z')
+	index = 0;
+	while (str[index] != '\0')
 	{
-		ft_print(c);
-		c++;
+		if ((str[index] >= 'a' ) && (str[index] <= 'z'))
+		{	
+			index++;
+			continue ;
+		}
+		else
+			return (0);
 	}
+	return (1);
 }

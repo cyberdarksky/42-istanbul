@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 11:51:44 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/14 11:53:48 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/16 14:09:42 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/16 15:31:12 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print(char c)
+int	ft_str_is_alpha(char *str)
 {
-	write(1, &c, 1);
-}
+	int	index;
 
-void	ft_print_numbers(void)
-{
-	char	n;
-
-	n = '0';
-	while (n <= '9')
-	{
-		ft_print(n);
-		n++;
+	index = 0;
+	while (str[index] != '\0')
+	{	
+		if ((str[index] < 'A') || (str[index] > 'z'))
+			return (0);
+		else if ((str[index] < 'a') && (str[index] > 'Z'))
+			return (0);
+		index++;
 	}
+	return (1);
 }

@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_combn.c                                   :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 15:21:02 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/14 16:30:46 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/16 16:54:03 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/16 17:26:17 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+int	ft_str_is_printable(char *str)
 {
-	write(1, &c, 1);
-}
-
-void	ft_print_combn(int n)
-{
+	
 }
