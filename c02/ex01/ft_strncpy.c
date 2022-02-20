@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 15:58:30 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/17 16:22:40 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/16 13:05:17 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/20 18:04:57 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strlowcase(char *str)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-    int index;
+	unsigned int	index;
 
-    index = 0;
-    while (str[index] != '\0')
-    {
-        if ((str[index] <= 'Z') && (str[index] >= 'A'))
-            str[index] = str[index] + 32;
-        index++;
-    }
-    return (str);
+	index = 0;
+	while ((src[index] != '\0') && (index < n))
+	{
+		dest[index] = src[index];
+		index++;
+	}
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }

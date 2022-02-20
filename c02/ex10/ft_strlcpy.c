@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/16 13:05:17 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/16 14:08:42 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/20 13:55:20 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/20 14:12:30 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+unsigned int	ft_strlen(char *str)
 {
-	unsigned int	index;
+	unsigned int	i;
 
-	index = 0;
-	while ((src[index] != '\0') || (index < n))
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+{
+	unsigned int	i;
+
+	i = 0;
+	if (size == 0)
+		return (ft_strlen(src));
+	while (i < size - 1 && src[i] != '\0')
 	{
-		if (index >= n)
-			dest[index] = '\0';
-		dest[index] = src[index];
-		index++;
+		dest[i] = src[i];
+		i++;
 	}
-	dest[index + 1] = '\0';
-	return (dest);
+	dest[i] = '\0';
+	return (ft_strlen(src));
 }
