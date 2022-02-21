@@ -1,43 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 12:13:12 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/21 12:27:41 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/21 12:58:57 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/21 13:40:49 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print(char c)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	write(1, &c, 1);
-}
-
-void	ft_hexa(char c)
-{
-	char	*hex;
-
-	hex = "0123456789abcdef";
-	ft_print('\\');
-	ft_print(hex[c / 16]);
-	ft_print(hex[c % 16]);
-}
-
-void	ft_putstr_non_printable(char *str)
-{
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	if (n == 0)
+		return (0);
+	if (s1[i] == '\0' || s2[i] == '\0')
+		return (s1[i] - s2[i]);
+	while (s1[i] != '\0' && s2[i] != '\0' && i < n)
 	{
-		if (str[i] < 32 || str[i] > 126)
-			ft_hexa(str[i]);
+		if (s1[i] == s2[i])
+			i++;
 		else
-			ft_print(str[i]);
-		i++;
+			return (s1[i] - s2[i]);
 	}
+	return (0);
 }

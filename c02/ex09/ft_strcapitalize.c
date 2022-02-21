@@ -6,7 +6,7 @@
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:39:24 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/20 19:02:00 by cergun           ###   ########.fr       */
+/*   Updated: 2022/02/21 12:08:37 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strcapitalize(char *str)
 	{
 		if (i == 0 && str[i] >= 'a' && str[i] <= 'z')
 			str[i] -= 32;
-		else if(ft_check_char(str[i]) == 1)
+		else if (ft_check_char(str[i]) == 1)
 		{
 			if (str[i] >= 'A' && str[i] <= 'Z')
 				str[i] += 32;

@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 12:13:12 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/21 12:27:41 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/21 14:25:12 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/21 14:44:08 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print(char c)
+unsigned int	ft_strlen(char *str)
 {
-	write(1, &c, 1);
-}
-
-void	ft_hexa(char c)
-{
-	char	*hex;
-
-	hex = "0123456789abcdef";
-	ft_print('\\');
-	ft_print(hex[c / 16]);
-	ft_print(hex[c % 16]);
-}
-
-void	ft_putstr_non_printable(char *str)
-{
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
+{
+	unsigned int	len;
+	unsigned int	i;
+
+	i = 0;
+	len = ft_strlen(dest);
+	while (src[i] != '\0' && i < nb)
 	{
-		if (str[i] < 32 || str[i] > 126)
-			ft_hexa(str[i]);
-		else
-			ft_print(str[i]);
+		dest[len + i] = src[i];
 		i++;
 	}
+	dest[len + i] = '\0';
+	return (dest);
 }
