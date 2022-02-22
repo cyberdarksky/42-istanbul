@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 13:42:18 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/21 14:43:26 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/21 12:46:26 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/22 12:50:08 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-char	*ft_strcat(char *dest, char *src)
-{
-	int	len;
-	int	i;
-
-	i = 0;
-	len = ft_strlen(dest);
-	while (src[i] != '\0')
+	if (s1[i] == '\0' || s2[i] == '\0')
+		return (s1[i] - s2[i]);
+	while (s1[i] != '\0' && s2[i] != '\0')
 	{
-		dest[len + i] = src[i];
-		i++;
+		if (s1[i] == s2[i])
+			i++;
+		else
+			return (s1[i] - s2[i]);
 	}
-	dest[len + i] = '\0';
-	return (dest);
+	return (0);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char a[1024] = "bc";
+	char b[1024] = "a";
+
+	printf("Strcmp: %d_\n", strcmp(a, b));
+	printf("Mine: %d_\n", ft_strcmp(a, b));
+}
+*/

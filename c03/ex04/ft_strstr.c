@@ -6,7 +6,7 @@
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:42:21 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/21 18:01:26 by cergun           ###   ########.fr       */
+/*   Updated: 2022/02/22 12:59:00 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,16 @@ char	*ft_strstr(char *str, char *to_find)
 	}
 	return (0);
 }
+/*
+#include <string.h>
+#include <stdio.h>
+
+int main()
+{
+	char a[1024] = "Bir berber bir berbere gitmis.";
+	char b[1024] = "biz";
+
+	printf("Strstr: %s___\n", strstr(a, b));
+	printf("Mine: %s___\n", ft_strstr(a, b));
+}
+*/

@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 12:46:26 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/21 12:56:41 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/21 12:58:57 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/22 12:49:43 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
+	if (n == 0)
+		return (0);
 	if (s1[i] == '\0' || s2[i] == '\0')
 		return (s1[i] - s2[i]);
-	while (s1[i] != '\0' && s2[i] != '\0')
+	while (s1[i] != '\0' && s2[i] != '\0' && i < n)
 	{
 		if (s1[i] == s2[i])
 			i++;
@@ -26,3 +28,18 @@ int	ft_strcmp(char *s1, char *s2)
 	}
 	return (0);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char a[1024] = "asdfasd";
+	char b[1024] = "asfasdasfasd";
+
+	unsigned int n = 111;
+
+	printf("Strncmp: %d_\n", strncmp(a, b, n));
+	printf("Mine: %d_\n", ft_strncmp(a, b, n));
+}
+*/

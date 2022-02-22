@@ -6,7 +6,7 @@
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 14:25:12 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/21 14:44:08 by cergun           ###   ########.fr       */
+/*   Updated: 2022/02/22 12:55:11 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,20 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	dest[len + i] = '\0';
 	return (dest);
 }
+/*
+#include <string.h>
+#include <stdio.h>
+
+int main()
+{
+	char a[1024] = "ahmet";
+	char b[1024] = "mehmet";
+	char c[1024] = "ahmet";
+	char d[1024] = "mehmet";
+
+	unsigned int n = 111;
+
+	printf("Strncat: %s___\n", strncat(a, b, n));
+	printf("Mine: %s___\n", ft_strncat(c, d, n));
+}
+*/
