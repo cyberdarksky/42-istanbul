@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 12:46:26 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/22 12:50:08 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/22 14:28:20 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/22 18:24:48 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
-	if (s1[i] == '\0' || s2[i] == '\0')
-		return (s1[i] - s2[i]);
-	while (s1[i] != '\0' && s2[i] != '\0')
-	{
-		if (s1[i] == s2[i])
-			i++;
-		else
-			return (s1[i] - s2[i]);
-	}
-	return (0);
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
 /*
-#include <stdio.h>
 #include <string.h>
+#include <stdio.h>
 
 int main()
 {
-	char a[1024] = "bc";
-	char b[1024] = "a";
-
-	printf("Strcmp: %d_\n", strcmp(a, b));
-	printf("Mine: %d_\n", ft_strcmp(a, b));
+	char a[1024] = "Bu 29 uzunlugunda bir string.";
+	printf("Strlen: %lu\n", strlen(a));
+	printf("Mine: %d\n", ft_strlen(a));
 }
 */

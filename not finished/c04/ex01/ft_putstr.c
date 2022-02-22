@@ -1,52 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 13:42:18 by cergun            #+#    #+#             */
-/*   Updated: 2022/02/22 12:49:05 by cergun           ###   ########.fr       */
+/*   Created: 2022/02/22 14:33:36 by cergun            #+#    #+#             */
+/*   Updated: 2022/02/22 14:37:53 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include <unistd.h>
+
+void	ft_print(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-char	*ft_strcat(char *dest, char *src)
-{
-	int	len;
-	int	i;
-
-	i = 0;
-	len = ft_strlen(dest);
-	while (src[i] != '\0')
 	{
-		dest[len + i] = src[i];
+		ft_print(str[i]);
 		i++;
 	}
-	dest[len + i] = '\0';
-	return (dest);
 }
 /*
-#include <stdio.h>
-#include <string.h>
-
 int main()
 {
-	char a[1024] = "merhaba";
-	char b[1024] = "";
-	char c[1024] = "merhaba";
-	char d[1024] = "";
-
-	printf("Strcat: %s_\n", strcat(a, b));
-	printf("Mine: %s_\n", ft_strcat(c, d));
+	char a[1024] = "42 istanbul";
+	ft_putstr(a);
 }
 */
