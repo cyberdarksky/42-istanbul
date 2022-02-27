@@ -1,0 +1,21 @@
+!!!!This file is not standard you must read every C__ files own RTFM because they will be different!!!!
+First drag and drop these files to your cloned repo.
+It will automatically add main.c files to where it needs to go.
+Then go to ex__ (folder that you want to check) and compile ONLY test.c files
+You must compile ONLY test.c.
+When you run \a.out (test.c's compiled file) It will compile your code and testing main, and it will test automatically,
+then automatickly run your compiled file and it will give you results that you have to compare.
+
+These main not printing results for comparison. I added true results for to according main.c files.
+You should look main.c' s last lines
+Except ex01. ex01 Will print true results when you run it's test.
+
+!!Reminding!!
+DO NOT COMPILE YOUR CODE
+ONLY COMPILE TEST.C AND RUN IT.
+TEST.C WILL AUTOMATICKLY COMPILE YOUR CODE AND TESTING MAIN THEN IT WILL TEST YOUR CODE.
+
+If you have a question you can find me in 42 istanbul.
+My name is Eren and my username in intra.42.fr is mkala.
+These test files could be better but there is no time for editing them, because I'm in 42-piscine.
+If you have a suggestion or if you want to improve these test codes with me feel free to write on Slack or Github.
