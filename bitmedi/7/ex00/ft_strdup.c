@@ -24,28 +24,29 @@ int	ft_strlen(char *s)
 
 char	*ft_strdup(char *src)
 {
-	char	*arr;
+	char	*dest;
 	int		len;
 	int		i;
 
 	len = ft_strlen(src);
-	arr = (char *)malloc(len * sizeof(s));
+	dest = (char *)malloc((len + 1) * sizeof(char));
 	i = 0;
-	if (arr[i])
-		return NULL;
+	if (dest == NULL)
+		return (NULL);
 	while (src[i])
 	{
-		arr[i] = str[i];
+		dest[i] = src[i];
 		i++;
 	}
-	arr[i] = '\0';
-	return (arr);
+	dest[i] = '\0';
+	return (dest);
 }
-
+/*
 #include <stdio.h>
 #include <string.h>
 
 int main()
 {
-	printf("%s\n", );
+	printf("%s\n", strdup("deneme"));
 }
+*/
