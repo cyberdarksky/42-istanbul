@@ -6,7 +6,7 @@
 /*   By: cergun <cergun@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:14:11 by cergun            #+#    #+#             */
-/*   Updated: 2022/03/01 18:40:40 by cergun           ###   ########.fr       */
+/*   Updated: 2022/03/02 16:48:53 by cergun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		arr = malloc(1);
 		return (arr);
 	}
+	if (arr == NULL)
+		return (NULL);
 	arr = malloc(sizeof(strs));
 	i = 0;
 	while (i < size)
